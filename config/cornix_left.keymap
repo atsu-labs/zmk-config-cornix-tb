@@ -164,10 +164,10 @@
             //               | NONE | CTRL | WIN | ALT | SPC(L1) | GRV(L3) | | BKSP | ENT(L2) | NONE | NONE | NONE | NONE |
 
             bindings = <
-&kp ESC           &kp Q         &kp L         &kp E         &kp COMMA         &kp PERIOD                           &kp F      &kp W           &kp R          &kp Y     &kp SINGLE_QUOTE  &kp SLASH
-&kp TAB           &kp A         &kp I         &kp U         &kp O             &kp MINUS                            &kp K      &kp T           &kp N          &kp S     &kp H             &kp P
-&kp LEFT_SHIFT    &kp Z         &kp X         &kp C         &kp V             &kp SEMI    &kp F5  &kp PRINTSCREEN  &kp G      &kp D           &kp M          &kp J     &kp B             &kp UP
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_ALT  &kp INT_MUHENKAN  &kp SPACE                            &kp ENTER  &kp INT_HENKAN  &kp BACKSPACE  &kp LEFT  &kp DOWN          &kp RIGHT
+&kp ESC           &kp Q         &kp L         &kp E         &kp COMMA           &kp PERIOD                           &kp F      &kp W             &kp R          &kp Y     &kp SINGLE_QUOTE  &kp SLASH
+&kp TAB           &kp A         &kp I         &kp U         &kp O               &kp MINUS                            &kp K      &kp T             &kp N          &kp S     &kp H             &kp P
+&kp LEFT_SHIFT    &kp Z         &kp X         &kp C         &kp V               &kp SEMI    &kp F5  &kp PRINTSCREEN  &kp G      &kp D             &kp M          &kp J     &kp B             &kp UP
+&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_ALT  &lt 1 INT_MUHENKAN  &kp SPACE                            &kp ENTER  &lt 2 INT_HENKAN  &kp BACKSPACE  &kp LEFT  &kp DOWN          &kp RIGHT
             >;
 
             sensor-bindings = <&WheelScroll SCRL_DOWN SCRL_UP &inc_dec_kp PG_UP PG_DN>;
