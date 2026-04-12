@@ -102,6 +102,11 @@
             key-positions = <22 21>;
             layers = <0>;
         };
+
+        Layer3 {
+            bindings = <&mo 3>;
+            key-positions = <42 45>;
+        };
     };
 
     macros {
@@ -160,6 +165,13 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        TDMinusTilde: TDMinusTilde {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDMINUSTILDE";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp TILDE>;
+        };
     };
 
     keymap {
@@ -174,8 +186,8 @@
 
             bindings = <
 &kp ESC           &kp Q         &kp L         &kp E  &kp COMMA           &kp PERIOD                                     &kp F                   &kp W             &kp R          &kp Y     &kp SINGLE_QUOTE  &kp SLASH
-&kp TAB           &kp A         &kp I         &kp U  &kp O               &kp MINUS                                      &kp K                   &kp T             &kp N          &kp S     &kp H             &kp P
-&kp LEFT_SHIFT    &kp Z         &kp X         &kp C  &kp V               &kp SEMI              &kp F5  &kp PRINTSCREEN  &kp G                   &kp D             &kp M          &kp J     &kp B             &kp UP
+&kp TAB           &kp A         &kp I         &kp U  &kp O               &TDMinusTilde                                  &kp K                   &kp T             &kp N          &kp S     &kp H             &kp P
+&kp LEFT_SHIFT    &kp Z         &kp X         &kp C  &kp V               &colon                &kp F5  &kp PRINTSCREEN  &kp G                   &kp D             &kp M          &kp J     &kp B             &kp UP
 &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &mo 4  &lt 1 INT_MUHENKAN  &mt LEFT_SHIFT SPACE                           &mt LEFT_CONTROL ENTER  &lt 2 INT_HENKAN  &kp BACKSPACE  &kp LEFT  &kp DOWN          &kp RIGHT
             >;
 
@@ -190,10 +202,10 @@
             //               | NONE | TRANS| TRANS| TRANS| TRANS | TRANS  |  | TRANS | TRANS| NONE | NONE | NONE | F12 |
 
             bindings = <
-&trans  &kp EXCL  &kp AT  &kp HASH    &kp DOLLAR  &kp PERCENT                            &kp CARET  &kp AMPS  &kp STAR  &kp LPAR   &kp RPAR       &none
-&trans  &kp N1    &kp N2  &kp N3      &kp N4      &kp N5                                 &kp N6     &kp N7    &kp N8    &kp N9     &kp N0         &kp COLON
-&trans  &kp SEMI  &kp F2  &kp JP_YEN  &kp F4      &kp JP_RBRACKET  &kp JP_QUOTE  &trans  &kp JP_AT  &kp LEFT  &kp DOWN  &kp RIGHT  &kp F11        &none
-&trans  &trans    &trans  &trans      &trans      &trans                                 &trans     &trans    &trans    &trans     &mt RSHFT F12  &none
+&trans  &kp EXCL  &kp AT  &kp HASH    &kp DOLLAR  &kp PERCENT                        &kp CARET  &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR       &none
+&trans  &kp N1    &kp N2  &kp N3      &kp N4      &kp N5                             &kp N6     &kp N7     &kp N8     &kp N9     &kp N0         &kp COLON
+&trans  &kp F1    &kp F2  &kp JP_YEN  &kp F4      &kp GRAVE    &kp JP_QUOTE  &trans  &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH  &kp EQUAL      &kp PERIOD
+&trans  &trans    &trans  &trans      &trans      &trans                             &trans     &trans     &trans     &trans     &mt RSHFT F12  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
@@ -207,10 +219,10 @@
             //               | NONE |  ESC |  0   |  .   | TRANS |  DEL   |  | TRANS | TRANS| NONE | NONE | NONE | NONE |
 
             bindings = <
-&trans  &kp TAB          &kp HOME      &kp UP    &kp END        &kp LBKT                               &kp RBKT  &trans    &mkp MB3  &trans     &trans     &trans
-&trans  &kp JP_ASTERISK  &kp LEFT      &kp DOWN  &kp RIGHT      &kp LPAR                               &kp RPAR  &mkp MB1  &kp UP    &mkp MB2   &kp COLON  &trans
-&trans  &mt LSHFT SLASH  &kp LC(LEFT)  &none     &kp LC(RIGHT)  &kp LBRC    &kp JP_BACKQUOTE  &kp DEL  &kp RBRC  &kp LEFT  &kp DOWN  &kp RIGHT  &kp SLASH  &trans
-&trans  &kp ESC          &kp N0        &kp DOT   &trans         &kp DELETE                             &trans    &trans    &trans    &trans     &trans     &trans
+&trans  &kp TAB          &kp HOME      &kp UP    &kp END        &kp LBKT                               &kp RBKT  &kp HOME  &kp UP    &kp END    &trans         &trans
+&trans  &kp JP_ASTERISK  &kp LEFT      &kp DOWN  &kp RIGHT      &kp LPAR                               &kp RPAR  &kp LEFT  &kp DOWN  &kp RIGHT  &kp COLON      &kp TILDE
+&trans  &mt LSHFT SLASH  &kp LC(LEFT)  &none     &kp LC(RIGHT)  &kp LBRC    &kp JP_BACKQUOTE  &kp DEL  &kp RBRC  &kp LEFT  &none     &kp RIGHT  &kp BACKSLASH  &trans
+&trans  &kp ESC          &kp N0        &kp DOT   &trans         &kp DELETE                             &trans    &trans    &trans    &trans     &trans         &trans
             >;
 
             sensor-bindings = <&WheelScroll SCRL_DOWN SCRL_UP &inc_dec_kp PG_UP PG_DN>;
@@ -224,10 +236,10 @@
             //               | NONE | TRANS| TRANS| TRANS| TO0   | TRANS  |  | TRANS | TRANS| NONE | NONE | NONE | NONE |
 
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                 &kp LG(LC(LEFT))  &kp LG(TAB)  &mkp MB3  &trans     &kp LG(LC(RIGHT))  &none
-&none  &trans        &trans        &trans        &trans        &trans                       &mkp MB4          &mkp MB1     &kp UP    &mkp MB2   &mkp MB5           &none
-&none  &trans        &trans        &trans        &trans        &trans        &trans  &to 0  &trans            &kp LEFT     &kp DOWN  &kp RIGHT  &trans             &none
-&none  &trans        &trans        &trans        &to 0         &trans                       &trans            &trans       &trans    &trans     &trans             &none
+&none  &none   &none                &kt K_SCROLL_UP    &none                  &none                  &kp LG(LC(LEFT))  &kp LG(TAB)  &mkp MB3  &trans     &kp LG(LC(RIGHT))  &none
+&none  &trans  &kp LS(K_SCROLL_UP)  &kp K_SCROLL_DOWN  &kp LS(K_SCROLL_DOWN)  &trans                 &mkp MB4          &mkp MB1     &kp UP    &mkp MB2   &mkp MB5           &none
+&none  &trans  &trans               &trans             &trans                 &trans  &trans  &to 0  &trans            &kp LEFT     &kp DOWN  &kp RIGHT  &trans             &none
+&none  &trans  &trans               &trans             &trans                 &trans                 &trans            &trans       &trans    &trans     &trans             &none
             >;
 
             sensor-bindings = <&inc_dec_kp LC(KP_MINUS) LC(KP_PLUS) &inc_dec_kp PG_UP PG_DN>;
@@ -241,10 +253,10 @@
             //               | NONE | TRANS| TRANS| TRANS| SPC(L1) | GRV(L3) |  | TRANS | ENT(L2) | NONE | NONE | NONE | BOOT |
 
             bindings = <
-&none  &trans  &trans          &mmv MOVE_UP    &trans           &trans                       &trans  &trans       &mkp MB3  &trans    &trans  &none
-&none  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans                       &trans  &mkp MB1     &trans    &mkp MB2  &trans  &none
-&none  &trans  &trans          &trans          &trans           &trans       &trans  &trans  &trans  &trans       &trans    &trans    &trans  &none
-&none  &trans  &trans          &trans          &lt 1 SPACE      &lt 3 GRAVE                  &trans  &lt 2 ENTER  &trans    &trans    &trans  &none
+&none  &trans  &trans          &mmv MOVE_UP    &trans           &trans                  &trans  &trans    &mkp MB3  &trans    &trans  &none
+&none  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans                  &trans  &mkp MB1  &trans    &mkp MB2  &trans  &none
+&none  &trans  &trans          &trans          &trans           &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &none
+&none  &trans  &trans          &trans          &trans           &trans                  &trans  &trans    &trans    &trans    &trans  &none
             >;
 
             sensor-bindings = <&WheelScroll SCRL_DOWN SCRL_UP &inc_dec_kp PG_UP PG_DN>;
