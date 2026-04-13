@@ -253,10 +253,10 @@
             //               | NONE | TRANS| TRANS| TRANS| SPC(L1) | GRV(L3) |  | TRANS | ENT(L2) | NONE | NONE | NONE | BOOT |
 
             bindings = <
-&none  &trans  &trans          &mmv MOVE_UP    &trans           &trans                  &trans  &trans    &mkp MB3  &trans    &trans  &none
-&none  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans                  &trans  &mkp MB1  &trans    &mkp MB2  &trans  &none
-&none  &trans  &trans          &trans          &trans           &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &none
-&none  &trans  &trans          &trans          &trans           &trans                  &trans  &trans    &trans    &trans    &trans  &none
+&none         &trans  &trans          &mmv MOVE_UP    &trans           &trans                  &trans  &trans    &mkp MB3  &trans    &trans  &none
+&none         &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans                  &trans  &mkp MB1  &trans    &mkp MB2  &trans  &none
+&none         &trans  &trans          &trans          &trans           &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &none
+&kp LC(CAPS)  &trans  &trans          &trans          &trans           &trans                  &trans  &trans    &trans    &trans    &trans  &none
             >;
 
             sensor-bindings = <&WheelScroll SCRL_DOWN SCRL_UP &inc_dec_kp PG_UP PG_DN>;
