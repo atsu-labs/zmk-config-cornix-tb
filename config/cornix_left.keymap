@@ -105,7 +105,7 @@
 
         Layer3 {
             bindings = <&mo 3>;
-            key-positions = <42 45>;
+            key-positions = <45 41>;
         };
     };
 
@@ -186,7 +186,7 @@
 
             bindings = <
 &kp ESC           &kp Q         &kp L         &kp E  &kp COMMA           &kp PERIOD                                     &kp F                   &kp W             &kp R          &kp Y     &kp SINGLE_QUOTE  &kp SLASH
-&kp TAB           &kp A         &kp I         &kp U  &kp O               &TDMinusTilde                                  &kp K                   &kp T             &kp N          &kp S     &kp H             &kp P
+&kp TAB           &kp A         &kp I         &kp U  &kp O               &TDMinusTilde                                  &kp K                   &kp T             &kp N          &kp S     &kp H             &mt RSHIFT P
 &kp LEFT_SHIFT    &kp Z         &kp X         &kp C  &kp V               &colon                &kp F5  &kp PRINTSCREEN  &kp G                   &kp D             &kp M          &kp J     &kp B             &kp UP
 &kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &mo 4  &lt 1 INT_MUHENKAN  &mt LEFT_SHIFT SPACE                           &mt LEFT_CONTROL ENTER  &lt 2 INT_HENKAN  &kp BACKSPACE  &kp LEFT  &kp DOWN          &kp RIGHT
             >;
@@ -205,7 +205,7 @@
 &trans  &kp EXCL  &kp AT  &kp HASH    &kp DOLLAR  &kp PERCENT                        &kp CARET  &kp AMPS   &kp STAR   &kp LPAR   &kp RPAR       &none
 &trans  &kp N1    &kp N2  &kp N3      &kp N4      &kp N5                             &kp N6     &kp N7     &kp N8     &kp N9     &kp N0         &kp COLON
 &trans  &kp F1    &kp F2  &kp JP_YEN  &kp F4      &kp GRAVE    &kp JP_QUOTE  &trans  &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH  &kp EQUAL      &kp PERIOD
-&trans  &trans    &trans  &trans      &trans      &trans                             &trans     &trans     &trans     &trans     &mt RSHFT F12  &none
+&trans  &trans    &trans  &trans      &trans      &trans                             &trans     &trans     &kp DEL    &trans     &mt RSHFT F12  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
