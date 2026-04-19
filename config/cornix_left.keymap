@@ -102,11 +102,6 @@
             key-positions = <22 21>;
             layers = <0>;
         };
-
-        Layer3 {
-            bindings = <&mo 3>;
-            key-positions = <45 41>;
-        };
     };
 
     macros {
