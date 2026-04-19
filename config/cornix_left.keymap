@@ -250,11 +250,22 @@
             bindings = <
 &none         &trans  &trans          &mmv MOVE_UP    &trans           &trans                  &trans  &trans    &mkp MB3  &trans    &trans  &none
 &none         &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans                  &trans  &mkp MB1  &trans    &mkp MB2  &trans  &none
-&none         &trans  &trans          &trans          &trans           &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &none
-&kp LC(CAPS)  &trans  &trans          &trans          &trans           &trans                  &trans  &mo 3     &trans    &trans    &trans  &none
+&none         &trans  &trans          &trans          &trans           &trans  &trans  &trans  &trans  &mkp MB4  &trans    &mkp MB5  &trans  &none
+&kp LC(CAPS)  &trans  &trans          &trans          &trans           &trans                  &trans  &mo 5     &trans    &trans    &trans  &none
             >;
 
             sensor-bindings = <&WheelScroll SCRL_DOWN SCRL_UP &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans          &msc SCRL_UP    &trans           &trans                  &trans  &trans    &mkp MB3  &trans    &trans  &trans
+&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans                  &trans  &mkp MB1  &trans    &mkp MB2  &trans  &trans
+&trans  &trans  &trans          &trans          &trans           &trans  &trans  &trans  &trans  &mkp MB4  &trans    &mkp MB5  &trans  &trans
+&trans  &trans  &trans          &trans          &trans           &trans                  &trans  &trans    &trans    &trans    &trans  &trans
+            >;
+
+            sensor-bindings = <&WheelScroll SCRL_UP SCRL_DOWN>;
         };
     };
 };
