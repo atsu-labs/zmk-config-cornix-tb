@@ -102,6 +102,16 @@
             key-positions = <22 21>;
             layers = <0>;
         };
+
+        Lclick {
+            bindings = <&mkp LCLK>;
+            key-positions = <19 20>;
+        };
+
+        Rclick {
+            bindings = <&mkp RCLK>;
+            key-positions = <20 21>;
+        };
     };
 
     macros {
