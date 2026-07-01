@@ -106,11 +106,13 @@
         Lclick {
             bindings = <&mkp LCLK>;
             key-positions = <19 20>;
+            slow-release;
         };
 
         Rclick {
             bindings = <&mkp RCLK>;
             key-positions = <20 21>;
+            slow-release;
         };
     };
 
